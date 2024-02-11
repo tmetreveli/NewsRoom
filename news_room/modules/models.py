@@ -1,5 +1,7 @@
 from django.db import models
 from content.models import Category, Article
+from django.db.models import CharField
+from django.db.models.functions import Cast
 
 
 class Menu(models.Model):
@@ -8,10 +10,13 @@ class Menu(models.Model):
     is_external = models.BooleanField(default=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     is_active = models.BooleanField(default=True)
+    
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return self.name
-
+casted_name = Cast('name', CharField())
 class Block(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     visual_selection = models.CharField(max_length=50)

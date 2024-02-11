@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ninja',
     'tinymce',
     'treebeard',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [
