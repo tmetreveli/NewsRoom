@@ -1,12 +1,15 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from treebeard.mp_tree import MP_Node
 
 User = get_user_model()
 
-class Category(models.Model):
+class Category(MP_Node):
     name = models.CharField(max_length=250)
     logo = models.ImageField(upload_to='category_logos/')
     parent = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
+    depth = models.IntegerField(default=0)
+    path = models.CharField(max_length=100, default='')
 
     def __str__(self):
         return self.name

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'modules',
     'ninja',
     'tinymce',
+    'treebeard',
 ]
 
 MIDDLEWARE = [
