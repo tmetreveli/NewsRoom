@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from treebeard.mp_tree import MP_Node
+from tinymce.models import HTMLField
 
 User = get_user_model()
 
@@ -22,7 +23,8 @@ class Tag(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=500)
-    description = models.TextField()
+    # description = models.TextField()
+    description = HTMLField()
     publication_datetime = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
