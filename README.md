@@ -19,7 +19,7 @@ User Authentication: Secure user authentication system for administrators to man
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/tmetreveli/NewsRoom.git
 2. Install dependencies:
    cd news_room
   pip install -r requirements.txt
