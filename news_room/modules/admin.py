@@ -2,7 +2,6 @@ from django.contrib import admin
 from modules.models import Menu, Block
 from adminsortable2.admin import SortableAdminMixin
 
-
 admin.site.register(Block)
 
 @admin.register(Menu)

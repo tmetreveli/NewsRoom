@@ -16,7 +16,7 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name
-casted_name = Cast('name', CharField())
+
 class Block(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     visual_selection = models.CharField(max_length=50)
