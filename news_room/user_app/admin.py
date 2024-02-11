@@ -1,12 +1,11 @@
 from django.contrib import admin
-# from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
-# from django.forms import TextInput, Textarea
-# from tinymce.widgets import TinyMCE
+from django.db import models
+from tinymce.widgets import TinyMCE
 
-# class CustomUserAdmin(UserAdmin):
-#     formfield_overrides = {
-#         CustomUser.description.field.name: {'widget': TinyMCE()},
-#     }
+class YourModelAdminForm(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE(attrs={'cols': 80, 'rows': 20})},
+    }
 
-admin.site.register(CustomUser)
+admin.site.register(CustomUser, YourModelAdminForm)

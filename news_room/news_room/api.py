@@ -63,11 +63,13 @@ def list_articles(request, category: str = None, tag: str = None, skip: int = 0,
     if category:
         queryset = queryset.filter(category=category)
     if tag:
+        print(tag)
         queryset = queryset.filter(tags__name=tag)
+        print(queryset)
 
     articles = []
     for article in queryset[skip: skip + limit]:
-        tag_ids = list(article.tags.values_list('id', flat=True))  # Get tag IDs
+        tag_ids = list(article.tags.values_list('id', flat=True))  
         article_data = {
             "id": article.id,
             "title": article.title,
@@ -75,7 +77,7 @@ def list_articles(request, category: str = None, tag: str = None, skip: int = 0,
             "publication_datetime": article.publication_datetime.strftime("%Y-%m-%d %H:%M:%S"),
             "author_id": article.author_id,
             "category_id": article.category_id,
-            "tags": tag_ids,  # Use tag IDs as list of integers
+            "tags": tag_ids,  
             "main_image": article.main_image.url if article.main_image else None,
             "publishing": article.publishing
         }

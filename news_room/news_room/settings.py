@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'content',
     'modules',
     'ninja',
-    
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +137,10 @@ USER_CHANGE_FORM = 'user_app.forms.CustomUserChangeForm'
 # DJANGO_SETTINGS_MODULE='tests.settings'
 
 
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 300,
+    'width': 600,
+    'menubar': False,
+    'plugins': 'textcolor',
+    'toolbar': 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+}
