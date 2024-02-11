@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user_app',
     'content',
     'modules',
+    'ninja',
     
 ]
 
