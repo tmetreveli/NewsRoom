@@ -21,8 +21,14 @@ User Authentication: Secure user authentication system for administrators to man
    ```bash
    git clone https://github.com/tmetreveli/NewsRoom.git
 2. Install dependencies:
-   cd news_room
+   cd NewsRoom/news_room
   pip install -r requirements.txt
-3. Run the development server:
+3. Run migrations
+   python manage.py makemigrations
+   python manage.py migrate
+4. create superuser to access admin page
+   python manage.py createsuperuser
+5. Run the development server:
    python manage.py runserver
-
+6. Browse accessible api endpoints including:
+   http://127.0.0.1:8000/admin, http://127.0.0.1:8000/api/articles, http://127.0.0.1:8000/api/categories, http://127.0.0.1:8000/api/menus/, http://127.0.0.1:8000/api/blocks
